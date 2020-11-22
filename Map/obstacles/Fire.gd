@@ -13,3 +13,4 @@ func _physics_process(delta):
 			$Hitbox.queue_free()
 			$Fire.emitting = false
 			$sound.stop()
+			$AnimatedSprite.queue_free()

@@ -12,3 +12,4 @@ func _physics_process(delta):
 		if area.is_in_group("Extinguisher"):
 			$Hitbox.queue_free()
 			$Fire.emitting = false
+			$sound.stop()

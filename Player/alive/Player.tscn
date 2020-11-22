@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Player/alive/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/spritesheet.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Player/sound/idle.wav" type="AudioStream" id=6]
 [ext_resource path="res://Player/sound/move.wav" type="AudioStream" id=7]
 [ext_resource path="res://Player/sound/death_explode.wav" type="AudioStream" id=8]
+[ext_resource path="res://Player/sound/death_electric.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38, 30 )
@@ -24,6 +25,18 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 55, -0.25, 0, 0.25, 0, 59, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.4 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sound/electric:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -255,7 +268,7 @@ scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 2 )
 vframes = 10
 hframes = 6
-frame = 8
+frame = 7
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( 3, 2 )
@@ -297,3 +310,6 @@ stream = ExtResource( 5 )
 
 [node name="explode" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource( 8 )
+
+[node name="electric" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource( 9 )

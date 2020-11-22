@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fire extinguish.wav-2e8649b8159f0d798e07844de3edee2f.sample"
+
+[deps]
+
+source_file="res://Map/sound/fire extinguish.wav"
+dest_files=[ "res://.import/fire extinguish.wav-2e8649b8159f0d798e07844de3edee2f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

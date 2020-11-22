@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death_electric.wav-09fdb3f043178c2bca1d9ece1763f8af.sample"
+
+[deps]
+
+source_file="res://Player/sound/death_electric.wav"
+dest_files=[ "res://.import/death_electric.wav-09fdb3f043178c2bca1d9ece1763f8af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

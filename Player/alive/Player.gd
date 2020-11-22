@@ -47,7 +47,7 @@ func _physics_process(delta):
 		if motion.y > 200: animation.travel("fall")
 		elif motion.y < -200: animation.travel("jump")
 		if in_fire > 0: fire_dmg += delta
-		if fire_dmg >= 0.5:
+		if fire_dmg >= 0.2:
 			fire_dmg = 0
 			animated_death("explode")
 

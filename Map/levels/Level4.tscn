@@ -5,7 +5,6 @@
 [ext_resource path="res://other/Lv1-4_BG.jpg" type="Texture" id=3]
 [ext_resource path="res://concept/Stage_4.jpg" type="Texture" id=4]
 
-
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
 

@@ -6,21 +6,20 @@
 [ext_resource path="res://other/firehazard2a_s.png" type="Texture" id=4]
 [ext_resource path="res://other/firehazard2b_s.png" type="Texture" id=5]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47, 127 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 47, 78 )
-
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 0.409696 ), 0.0, 1.27112, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0.00525624, 0.521682, 0.830486, 1 )
 colors = PoolColorArray( 1, 0.924434, 0, 1, 1, 0, 0, 1, 0.271523, 0.271523, 0.271523, 1, 0, 0, 0, 0 )
 
 [sub_resource type="Gradient" id=4]
 colors = PoolColorArray( 0.207031, 0.207031, 0.207031, 1, 0, 0, 0, 0 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
@@ -32,8 +31,8 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -57 )
-shape = SubResource( 5 )
+position = Vector2( 0, -83 )
+shape = SubResource( 1 )
 
 [node name="Fire" type="CPUParticles2D" parent="."]
 position = Vector2( 0, 35 )
@@ -51,8 +50,8 @@ angle = 236.0
 angle_random = 1.0
 scale_amount = 0.1
 scale_amount_random = 0.15
-scale_amount_curve = SubResource( 3 )
-color_ramp = SubResource( 2 )
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )
 
 [node name="Smoke" type="CPUParticles2D" parent="."]
 visible = false
@@ -71,7 +70,7 @@ angle = 236.0
 angle_random = 1.0
 scale_amount = 0.1
 scale_amount_random = 0.15
-scale_amount_curve = SubResource( 3 )
+scale_amount_curve = SubResource( 2 )
 color_ramp = SubResource( 4 )
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
@@ -81,6 +80,5 @@ autoplay = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 20 )
-frames = SubResource( 6 )
-frame = 1
+frames = SubResource( 5 )
 playing = true

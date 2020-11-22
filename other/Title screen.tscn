@@ -13,9 +13,9 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 1172.0
+margin_left = 1175.0
 margin_top = 409.0
-margin_right = 1572.0
+margin_right = 1575.0
 margin_bottom = 609.0
 texture_normal = ExtResource( 1 )
 texture_hover = ExtResource( 3 )

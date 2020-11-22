@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Composite_Winner_Title_screen.png-1e89f1da676fff92c9aae1210f784404.stex"
+path="res://.import/Composite_Winner_Title_screen.png-3c9b0f534ea0d1d00aa07bb6252e9007.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Composite_Winner_Title_screen.png"
-dest_files=[ "res://.import/Composite_Winner_Title_screen.png-1e89f1da676fff92c9aae1210f784404.stex" ]
+source_file="res://other/Composite_Winner_Title_screen.png"
+dest_files=[ "res://.import/Composite_Winner_Title_screen.png-3c9b0f534ea0d1d00aa07bb6252e9007.stex" ]
 
 [params]
 

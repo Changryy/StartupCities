@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lv1-4_BG.jpg-a4b9290b207d5a2f1f06c7f36da38893.stex"
+path="res://.import/Lv1-4_BG.jpg-63c95553c68f953c12f75337e33ac597.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Lv1-4_BG.jpg"
-dest_files=[ "res://.import/Lv1-4_BG.jpg-a4b9290b207d5a2f1f06c7f36da38893.stex" ]
+source_file="res://other/Lv1-4_BG.jpg"
+dest_files=[ "res://.import/Lv1-4_BG.jpg-63c95553c68f953c12f75337e33ac597.stex" ]
 
 [params]
 

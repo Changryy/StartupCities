@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Map/level_template/Level.gd" type="Script" id=1]
 [ext_resource path="res://Map/tiles/Tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Lv5_BG.jpg" type="Texture" id=3]
+[ext_resource path="res://other/Lv5_BG.jpg" type="Texture" id=3]
 [ext_resource path="res://Map/obstacles/Moving Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://concept/Stage_5.jpg" type="Texture" id=5]
 

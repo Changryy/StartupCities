@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/firehazard2a_s.png-beac6884b05401b1b959a7fec0ec5ef6.stex"
+path="res://.import/firehazard2a_s.png-eb278cd922b0e4f0f669fd776a2fb0d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://firehazard2a_s.png"
-dest_files=[ "res://.import/firehazard2a_s.png-beac6884b05401b1b959a7fec0ec5ef6.stex" ]
+source_file="res://other/firehazard2a_s.png"
+dest_files=[ "res://.import/firehazard2a_s.png-eb278cd922b0e4f0f669fd776a2fb0d4.stex" ]
 
 [params]
 

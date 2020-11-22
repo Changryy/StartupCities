@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/17-178727_download-mist-free-png-transparent-image-and-clipart.png-b6f60a7c7e098414256345c415714fa2.stex"
+path="res://.import/17-178727_download-mist-free-png-transparent-image-and-clipart.png-4f2814f182cf155cf793070b07647f28.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://17-178727_download-mist-free-png-transparent-image-and-clipart.png"
-dest_files=[ "res://.import/17-178727_download-mist-free-png-transparent-image-and-clipart.png-b6f60a7c7e098414256345c415714fa2.stex" ]
+source_file="res://other/17-178727_download-mist-free-png-transparent-image-and-clipart.png"
+dest_files=[ "res://.import/17-178727_download-mist-free-png-transparent-image-and-clipart.png-4f2814f182cf155cf793070b07647f28.stex" ]
 
 [params]
 

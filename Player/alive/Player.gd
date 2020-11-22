@@ -54,8 +54,9 @@ func movement():
 		$Sprite.flip_h = true
 		move_dir -= 1
 	
-	if move_dir != 0: animation.travel("run")
-	else: animation.travel("idle")
+	if is_on_floor():
+		if move_dir != 0: animation.travel("run")
+		else: animation.travel("idle")
 	motion.x = lerp(motion.x, move_dir*speed, 0.1)
 
 

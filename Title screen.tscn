@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Lv1-4_BG.jpg" type="Texture" id=1]
+
+[node name="Title screen" type="Node2D"]
+position = Vector2( -852, -364 )
+
+[node name="Lv1-4_BG" type="Sprite" parent="."]
+position = Vector2( 1364, 579 )
+texture = ExtResource( 1 )

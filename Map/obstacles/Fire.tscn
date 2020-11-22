@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://17-178727_download-mist-free-png-transparent-image-and-clipart.png" type="Texture" id=1]
+[ext_resource path="res://Map/obstacles/Fire.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47, 78 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.409696 ), 0.0, 1.27112, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.00525624, 0.521682, 0.830486, 1 )
+colors = PoolColorArray( 1, 0.924434, 0, 1, 1, 0, 0, 1, 0.271523, 0.271523, 0.271523, 1, 0, 0, 0, 0 )
+
+[sub_resource type="Gradient" id=4]
+colors = PoolColorArray( 0.207031, 0.207031, 0.207031, 1, 0, 0, 0, 0 )
+
+[node name="Fire" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -57 )
+shape = SubResource( 1 )
+
+[node name="Fire" type="CPUParticles2D" parent="."]
+position = Vector2( 0, 35 )
+amount = 32
+lifetime = 5.0
+preprocess = 3.0
+randomness = 0.23
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 50, 1 )
+gravity = Vector2( 0, -30 )
+angular_velocity = 17.34
+angular_velocity_random = 1.0
+angle = 236.0
+angle_random = 1.0
+scale_amount = 0.1
+scale_amount_random = 0.15
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 2 )
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2( 0, 35 )
+amount = 1
+lifetime = 5.0
+preprocess = 3.0
+lifetime_randomness = 1.0
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 50, 1 )
+gravity = Vector2( 0, -30 )
+angular_velocity = 17.34
+angular_velocity_random = 1.0
+angle = 236.0
+angle_random = 1.0
+scale_amount = 0.1
+scale_amount_random = 0.15
+scale_amount_curve = SubResource( 3 )
+color_ramp = SubResource( 4 )

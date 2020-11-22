@@ -3,7 +3,6 @@
 [ext_resource path="res://Map/tiles/Tile_sets.png" type="Texture" id=1]
 [ext_resource path="res://Map/obstacles/obstacles.png" type="Texture" id=2]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 100, 100, 0, 100, 0, 17, 100, 17 )
 
@@ -184,3 +183,17 @@ points = PoolVector2Array( 99.8465, 100, 65.3521, 100, 65.6311, 82.7439, 13.1638
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 1
+5/name = "fire"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 100, 0, 100, 100 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0

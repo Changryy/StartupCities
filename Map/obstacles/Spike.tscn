@@ -10,4 +10,4 @@ texture = ExtResource( 1 )
 
 [node name="Hitbox" type="CollisionPolygon2D" parent="."]
 position = Vector2( 0, 7 )
-polygon = PoolVector2Array( -16, 33, 0, -24, 15, 33 )
+polygon = PoolVector2Array( -47, 36, -1, -32, 46, 35 )

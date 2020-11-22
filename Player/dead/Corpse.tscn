@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/dead/Corpse.gd" type="Script" id=1]
 [ext_resource path="res://Player/spritesheet.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 31 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 resource_name = "electric"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Sprite:frame")
@@ -17,6 +17,20 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 59, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fall"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 49, -0.25, 0, 0.25, 0, 52, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -42,12 +56,13 @@ scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 2 )
 vframes = 10
 hframes = 6
-frame = 59
+frame = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( 7, 3 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/electric = SubResource( 2 )
+anims/electric = SubResource( 4 )
+anims/fall = SubResource( 5 )
 anims/spike = SubResource( 3 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00010.png" type="Texture" id=1]
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00015.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00011.png" type="Texture" id=15]
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00009.png" type="Texture" id=16]
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00004.png" type="Texture" id=17]
+[ext_resource path="res://Map/obstacles/Wires.gd" type="Script" id=18]
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00019.png" type="Texture" id=20]
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00020.png" type="Texture" id=28]
 [ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00021.png" type="Texture" id=29]
@@ -37,6 +38,7 @@ animations = [ {
 } ]
 
 [node name="Wires" type="Area2D"]
+script = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3, 27 )
@@ -46,6 +48,8 @@ shape = SubResource( 1 )
 position = Vector2( -50, -55 )
 scale = Vector2( 1.04, 1 )
 frames = SubResource( 2 )
-frame = 14
+frame = 17
 playing = true
 centered = false
+
+[node name="sparks" type="AudioStreamPlayer2D" parent="."]

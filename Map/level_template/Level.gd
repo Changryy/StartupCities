@@ -31,6 +31,7 @@ func _ready():
 
 
 func init_tiles(tile):
+	var i = 0
 	for cell in $TileMap.get_used_cells_by_id(TILES[tile]["id"]):
 		# delete tile
 		$TileMap.set_cellv(cell,-1)
@@ -40,9 +41,12 @@ func init_tiles(tile):
 		else: object = TILES[tile]["instance"].instance()
 		# object position
 		object.position = $TileMap.map_to_world(cell)+TILE_SIZE/2+Vector2(0,16)
+		# add id to wires
+		if tile == "Wire": object.id = i
 		# add object
 		if TILES[tile]["instance"] != null:
 			get_node("Object/"+tile).add_child(object)
+		i += 1
 
 
 
@@ -50,3 +54,4 @@ func spawn_player():
 	var new_player = player.instance()
 	new_player.position = $Spawnpoint.position
 	add_child(new_player)
+	new_player.respawn()

@@ -13,26 +13,39 @@ var jumpforce = 1300
 
 var motion = Vector2.ZERO
 
+var dead = false
+var in_fire = false
+var fire_dmg = 0.0
 
 
 func _ready():
 	for spike in get_node("../Object/Spike").get_children():
 		spike.connect("body_entered", self, "_on_Spike_body_entered")
+	for wires in get_node("../Object/Wires").get_children():
+		wires.connect("body_entered", self, "_on_Wires_body_entered")
+	for fire in get_node("../Object/Fire").get_children():
+		fire.connect("body_entered", self, "_on_Fire_body_entered")
+		fire.connect("body_exited", self, "_on_Fire_body_exited")
 
 
 # warning-ignore:unused_argument
 func _physics_process(delta): 
+	var snap = Vector2.DOWN * 16 if is_on_floor() else Vector2.ZERO
 # warning-ignore:return_value_discarded
-	move_and_slide(motion, Vector2.UP)
+	move_and_slide_with_snap(motion, snap, Vector2.UP)
 
-	apply_gravity()
-	movement()
+	if animation.get_current_node() == "spawn" or dead: motion = Vector2.ZERO
+	else:
+		apply_gravity()
+		movement()
 
-	if motion.y > 100: animation.travel("fall")
-	elif motion.y < -50: animation.travel("jump")
+		if motion.y > 200: animation.travel("fall")
+		elif motion.y < -200: animation.travel("jump")
+		if in_fire: fire_dmg += delta
+		if fire_dmg >= 1: animated_death("explode")
 
 
-	if position.y > 2000: position = spawnpoint # respawn if outside of playable area
+	if position.y > 2000: respawn() # respawn if outside of playable area
 
 
 
@@ -55,25 +68,51 @@ func movement():
 		move_dir -= 1
 	
 	if is_on_floor():
-		if move_dir != 0: animation.travel("run")
+		if move_dir != 0: animation.travel("move")
 		else: animation.travel("idle")
 	motion.x = lerp(motion.x, move_dir*speed, 0.1)
 
 
 func _on_Spike_body_entered(body):
-	if body == self and (position-spawnpoint).length() > 50: respawn()
+	if body == self and (position-spawnpoint).length() > 50 and motion.y > 500: die("spike")
 
+func _on_Wires_body_entered(body):
+	if body == self:
+		animated_death("electric")
 
-func respawn():
+func _on_Fire_body_entered(body):
+	if body == self: in_fire = true
+
+func _on_Fire_body_exited(body):
+	if body == self:
+		in_fire = false
+		fire_dmg = 0
+
+func die(anim):
 	motion.y = gravity
 	var dead_body = corpse.instance()
 	dead_body.flip = $Sprite.flip_h
 	dead_body.position = position
 	dead_body.motion = motion*Vector2(0.001, 0.01)
-	position = spawnpoint
+	dead_body.anim = anim
+	respawn()
 	corpses.call_deferred("add_child", dead_body)
 
+func respawn():
+	motion.y = gravity
+	$Sprite.flip_h = false
+	position = spawnpoint
+	$Sound/spawn.play()
+	animation.start("spawn")
+	dead = false
 
+
+func animated_death(anim):
+	dead = true
+	animation.start(anim)
+	yield(get_tree().create_timer(0.5), "timeout")
+	if anim == "electric": die(anim)
+	else: respawn()
 
 
 

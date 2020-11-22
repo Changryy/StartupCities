@@ -1,0 +1,51 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00010.png" type="Texture" id=1]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00015.png" type="Texture" id=2]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00008.png" type="Texture" id=3]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00003.png" type="Texture" id=4]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00013.png" type="Texture" id=5]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00017.png" type="Texture" id=6]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00016.png" type="Texture" id=7]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00012.png" type="Texture" id=8]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00007.png" type="Texture" id=9]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00005.png" type="Texture" id=10]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00006.png" type="Texture" id=11]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00002.png" type="Texture" id=12]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00014.png" type="Texture" id=13]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00018.png" type="Texture" id=14]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00011.png" type="Texture" id=15]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00009.png" type="Texture" id=16]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00004.png" type="Texture" id=17]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00019.png" type="Texture" id=20]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00020.png" type="Texture" id=28]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00021.png" type="Texture" id=29]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00022.png" type="Texture" id=30]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00023.png" type="Texture" id=32]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00024.png" type="Texture" id=33]
+[ext_resource path="res://Map/obstacles/sprites/Sparks/frame_00001.png" type="Texture" id=36]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 51, 14 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="Wires" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3, 27 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -50, -55 )
+scale = Vector2( 1.04, 1 )
+frames = SubResource( 2 )
+frame = 14
+playing = true
+centered = false

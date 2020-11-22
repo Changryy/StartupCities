@@ -140,7 +140,7 @@ func animated_death(anim):
 func _on_Flag_body_entered(body):
 	if body == self:
 		Global.lvl += 1
-		if Global.lvl <= 5: get_tree().change_scene("res://map/levels/Level"+str(Global.lvl)+".tscn")
+		if Global.lvl <= 5: get_tree().change_scene("res://Map/levels/Level"+str(Global.lvl)+".tscn")
 		else:
 			Global.reset()
 			get_tree().change_scene("res://Map/levels/Level1.tscn")

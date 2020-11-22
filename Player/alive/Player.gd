@@ -143,7 +143,7 @@ func _on_Flag_body_entered(body):
 		if Global.lvl <= 5: get_tree().change_scene("res://Map/levels/Level"+str(Global.lvl)+".tscn")
 		else:
 			Global.reset()
-			get_tree().change_scene("res://Map/levels/Level1.tscn")
+			get_tree().change_scene("res://Title screen.tscn")
 		
 
 

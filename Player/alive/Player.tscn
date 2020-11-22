@@ -88,7 +88,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 9.5, 0, 0, 0.2, 0, 7, 0, 0, 0, 0, 9.5, -0.2, 0, 0, 0 ),
+"points": PoolRealArray( 9.2, 0, 0, 0.2, 0, 7, 0, 0, 0, 0, 9.2, -0.2, 0, 0, 0 ),
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/1/type = "value"

@@ -22,4 +22,4 @@ texture_hover = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="button_down" from="TextureButton" to="." method="_on_TextureButton_button_down"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

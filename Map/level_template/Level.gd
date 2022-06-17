@@ -61,7 +61,7 @@ func spawn_player():
 	move_camera(cam_pos)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var cam_pos = lerp($Camera.position, get_node("Player").position - screen/2, 0.05)
 	move_camera(cam_pos)
 

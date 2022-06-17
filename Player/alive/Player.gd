@@ -47,18 +47,21 @@ func _physics_process(delta):
 		if motion.y > 200: animation.travel("fall")
 		elif motion.y < -200: animation.travel("jump")
 		if in_fire > 0: fire_dmg += delta
-		if fire_dmg >= 0.2:
+		if fire_dmg >= 0.1:
 			fire_dmg = 0
 			animated_death("explode")
 
 
 	if position.y > 2000: respawn() # respawn if outside of playable area
 
-	if motion.y > 1800 and not jumping: fall_dmg = true
-	elif motion.y > 2400: fall_dmg = true
-	if fall_dmg and is_on_floor() and not dead:
-		fall_dmg = false
-		die("fall")
+
+	if Input.is_action_just_pressed("ui_cancel"):
+		_on_Flag_body_entered(self)
+#	if motion.y > 1800 and not jumping: fall_dmg = true
+#	elif motion.y > 2400: fall_dmg = true
+#	if fall_dmg and is_on_floor() and not dead:
+#		fall_dmg = false
+#		die("fall")
 
 
 func apply_gravity():
@@ -88,7 +91,12 @@ func movement():
 
 
 func _on_Spike_body_entered(body):
-	if body == self and (position-spawnpoint).length() > 50 and motion.y > 400 and not dead: die("spike")
+	if body != self: return
+	if dead: return
+	for body in $Below.get_overlapping_bodies():
+		if body.is_in_group("dead"): return
+	die("spike")
+#	if (position-spawnpoint).length() > 50 and motion.y > 400: die("spike")
 
 func _on_Wires_body_entered(body):
 	if body == self and not dead:
@@ -143,7 +151,5 @@ func _on_Flag_body_entered(body):
 		if Global.lvl <= 5: get_tree().change_scene("res://Map/levels/Level"+str(Global.lvl)+".tscn")
 		else:
 			Global.reset()
-			get_tree().change_scene("res://Title screen.tscn")
-		
-
+			get_tree().change_scene("res://other/Title screen.tscn")
 

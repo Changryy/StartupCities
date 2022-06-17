@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Map/obstacles/sprites/Flag.png" type="Texture" id=1]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 42.0
 height = 96.0
@@ -33,4 +32,5 @@ shape = SubResource( 1 )
 position = Vector2( -15, -60 )
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 4 )
+frame = 1
 playing = true

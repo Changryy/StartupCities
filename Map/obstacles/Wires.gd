@@ -9,7 +9,7 @@ func _ready():
 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if $Sprite.frame == 0: $sparks.play()
 
 

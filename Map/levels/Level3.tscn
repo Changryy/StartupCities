@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Map/level_template/Level.gd" type="Script" id=1]
 [ext_resource path="res://Map/tiles/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://other/Lv1-4_BG.jpg" type="Texture" id=3]
 [ext_resource path="res://Map/obstacles/Moving Platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://concept/Stage_3.jpg" type="Texture" id=5]
+[ext_resource path="res://Map/level_template/desaturation.tres" type="Material" id=6]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
@@ -38,10 +39,10 @@ texture = ExtResource( 5 )
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Moving Platform" parent="Platforms" instance=ExtResource( 4 )]
-position = Vector2( 1140, 767 )
+position = Vector2( 1140, 315 )
 
 [node name="Destination" parent="Platforms/Moving Platform" index="0"]
-position = Vector2( 0, -452 )
+position = Vector2( 0, 452 )
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -52,7 +53,8 @@ current = true
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1056, 130 )
+material = ExtResource( 6 )
+position = Vector2( 285, 929 )
 texture = ExtResource( 3 )
 
 [node name="Border" type="Position2D" parent="."]

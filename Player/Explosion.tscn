@@ -7,32 +7,29 @@
 offsets = PoolRealArray( 0, 0.992116 )
 colors = PoolColorArray( 0, 1, 0.128009, 1, 0, 0.557792, 1, 0 )
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 95.0
-height = 278.0
+[sub_resource type="CircleShape2D" id=2]
+radius = 169.331
 
-[node name="Explosion" type="Area2D" groups=[
-"Extinguisher",
-]]
+[node name="Explosion" type="Area2D" groups=["Extinguisher"]]
 script = ExtResource( 1 )
 
 [node name="Slime" type="CPUParticles2D" parent="."]
+z_index = -1
 emitting = false
 amount = 32
-lifetime = 3.0
+lifetime = 2.0
 one_shot = true
-explosiveness = 0.95
+explosiveness = 1.0
 direction = Vector2( 0, -1 )
-gravity = Vector2( 0, 500 )
-initial_velocity = 400.0
+gravity = Vector2( 0, 2000 )
+initial_velocity = 900.0
+initial_velocity_random = 0.4
 angular_velocity = 90.0
 angular_velocity_random = 1.0
 scale_amount = 16.0
 color_ramp = SubResource( 1 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -72 )
-rotation = 1.5708
 shape = SubResource( 2 )
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
